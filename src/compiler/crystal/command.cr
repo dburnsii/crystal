@@ -335,6 +335,11 @@ class Crystal::Command
         compiler.show_error_trace = true
       end
 
+      opts.on("--nodefaultlibs", "Disable standard library locations") do
+        compiler.flags << "-nodefaultlibs"
+        compiler.default_libs = false
+      end
+
       opts.on("-h", "--help", "Show this message") do
         puts opts
         exit

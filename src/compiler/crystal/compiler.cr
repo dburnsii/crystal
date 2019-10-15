@@ -83,6 +83,10 @@ module Crystal
     # one LLVM module is created for each type in a program.
     property? single_module = false
 
+    # If `true`, uses `/usr/lib` and `/usr/local/lib` directories
+    # to find libraries
+    property? default_libs = true
+
     # A `ProgressTracker` object which tracks compilation progress.
     property progress_tracker = ProgressTracker.new
 
@@ -194,6 +198,7 @@ module Crystal
       program.wants_doc = wants_doc?
       program.color = color?
       program.stdout = stdout
+      program.default_libs = default_libs?
       program.show_error_trace = show_error_trace?
       program.progress_tracker = @progress_tracker
       program

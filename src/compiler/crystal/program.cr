@@ -107,6 +107,8 @@ module Crystal
     # Whether to show error trace
     property? show_error_trace = false
 
+    property default_libs = true
+
     # The main filename of this program
     property filename : String?
 
